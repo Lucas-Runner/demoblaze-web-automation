@@ -6,9 +6,10 @@ test('Browser Context Test', async ({ browser }) => {
 
     // Assertions
 
-    const searchPage = String(randomString);
     const currentURL = newTab.url();
+    //const userText = `Welcome ${randomString}`
     expect(currentURL).toBe("https://demoblaze.com/");
+    expect(await newTab.locator("[id='nameofuser']")).toContainText(`Welcome ${randomString}@putsbox.com`);
 
     await page.waitForTimeout(5000);
 
