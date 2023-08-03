@@ -7,7 +7,6 @@ test('Browser Context Test', async ({ browser }) => {
     // Product 1 selection
 
     const firstItemLocator = 'a[href="prod.html?idp_=1"].hrefch';
-    const firstItemName = await newTab.locator(firstItemLocator).textContent();
     await newTab.locator(firstItemLocator).click();
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='nava']").click();
@@ -20,7 +19,6 @@ test('Browser Context Test', async ({ browser }) => {
     // Product 2 selection
 
     const secondItemLocator = 'a[href="prod.html?idp_=8"].hrefch';
-    const secondItemName = await newTab.locator(secondItemLocator).textContent();
     await newTab.locator(secondItemLocator).click();
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='cartur']").click();
