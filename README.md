@@ -26,55 +26,36 @@
 1. Invoca função de registro
 2. Asserte a presença do URL correto
 3. Asserte a presença dos dados préviamente utilizados para Sign-in e log-in na página inicial em um campo de boas vindas
----
-
-- [x] **Cenário 2 - Adição de produtos** 
-
-- Execução das funções de registro e Log-in
-- Adição de um produto da página principal/inicial da aplicação ao carrinho
-- Retorno à página inicial
-- Navegação à outra categoria de produtos fora da página principal/inicial
-- Adição de outro produto de categoria diferente garantindo a função de categorias de produtos
-- Verificar a presença dos produtos selecionados no carrinho
-
-Execução:
-  
-  - [x] Captura do seletor do primeiro produto na página inicial e executar clique
-  - [x] Captura do seletor do botão de adição no carrinho e executar clique
-  - [x] Armazenar o texto que identifica o nome do item para asserções
-  - [x] Captura do seletor para retorno à página inicial e executar clique
-  - [x] Captura do seletor de outra categoria de produtos e executar clique
-  - [x] Captura do seletor do segundo produto na subcategoria e executar clique
-  - [x] Captura do seletor do botão de adição no carrinho e executar clique
-  - [x] Armazenar o texto que identifica o nome do item para asserções
-  - [x] Captura do seletor do item do carrinho e executar clique
-  - [x] Asserção de presença dos nomes dos itens adicionados em armazenamento
 
 ---
 
-- [x] **Cenário 3 - Execução de pedido** 
+# Cenário 2 - Adição de produtos
 
-- Execução das funções de registro e Log-in
-- Adição de um produto da página principal/inicial da aplicação ao carrinho
-- Retorno à página inicial
-- Navegação à outra categoria de produtos fora da página principal/inicial
-- Adição de outro produto de categoria diferente garantindo a função de categorias de produtos
-- Navegação ao carrinho
-- Preenchimento dos campos de compra e sua execução
-- Verificar a presença de mensagens de confirmação de compra
+- O cenário de testes de adição de produtos em carrinho visa garantir que os itens selecionados, tanto na página inicial quanto dentro de subcategoria de produtos resulta na presença dos produtos selecionados no carrinho
 
-Execução:
-  
-  - [x] Captura do seletor do primeiro produto na página inicial e executar clique
-  - [x] Captura do seletor do botão de adição no carrinho e executar clique
-  - [x] Armazenar o texto que identifica o nome do item para asserções
-  - [x] Captura do seletor para retorno à página inicial e executar clique
-  - [x] Captura do seletor de outra categoria de produtos e executar clique
-  - [x] Captura do seletor do segundo produto na subcategoria e executar clique
-  - [x] Captura do seletor do botão de adição no carrinho e executar clique
-  - [x] Captura do seletor do item do carrinho e executar clique
-  - [x] Captura do seletor de execução de compra e executar clique
-  - [x] Captura dos seletores dos campos obrigatórios de compra
-  - [x] Preenchimento dos campos de compra
-  - [x] Captura do seletor do botão de compra e executar clique
-  - [x] Asserção de presença de mensagem de compra
+1. Invoca função de registro
+2. Adiciona um produto localizado na página inicial no carrinho
+3. Armazena o título do produto
+4. Retorna a página inicial
+5. Seleciona sub-categoria de produtos no menu lateral
+6. Seleciona um segundo produto e o adiciona no carrinho
+7. Armazena o título do segundo produto
+8. Navega até o carrinho
+9. Asserte que os títulos dos produtos armazenados coincidem com os dados no carrinho
+
+---
+
+# Cenário 3 - Execução de ordem de compra
+
+- O cenário de testes de execução de compra efetua os mesmos passos do teste anterior, porém onde o teste anterior possui a função de assertir a presença dos produtos corretos no carrinho, o teste que simula o cenário de compra prossegue com a ordem de compra
+
+1. Invoca função de registro
+2. Adiciona um produto localizado na página inicial no carrinho
+4. Retorna a página inicial
+5. Seleciona sub-categoria de produtos no menu lateral
+6. Seleciona um segundo produto e o adiciona no carrinho
+8. Navega até o carrinho
+9. Seleciona o botão para finalização de compra
+10. Insegre dados de compra nos campos necessários
+11. Efetua compra
+12. Asserte a existência de uma mensagem de confirmação
