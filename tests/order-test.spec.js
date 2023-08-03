@@ -8,7 +8,6 @@ test('Browser Context Test', async ({ browser }) => {
 
     const firstItemLocator = 'a[href="prod.html?idp_=1"].hrefch';
     const firstItemName = await newTab.locator(firstItemLocator).textContent();
-    console.log(firstItemName);
     await newTab.locator(firstItemLocator).click();
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='nava']").click();
@@ -22,11 +21,9 @@ test('Browser Context Test', async ({ browser }) => {
 
     const secondItemLocator = 'a[href="prod.html?idp_=8"].hrefch';
     const secondItemName = await newTab.locator(secondItemLocator).textContent();
-    console.log(secondItemName);
     await newTab.locator(secondItemLocator).click();
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='cartur']").click();
-    //const totalCost = await newTab.locator(".confirm.btn.btn-lg.btn-primary");
 
     // Order placement
 
@@ -43,9 +40,7 @@ test('Browser Context Test', async ({ browser }) => {
     await newTab.locator("button[onclick='purchaseOrder()']").click();
     await newTab.locator(".confirm.btn.btn-lg.btn-primary").click();
 
-    expect(await newTab.locator('div.sweet-alert.showSweetAlert.visible')).toContainText("Thank you for your purchase!");
-
-    await page.waitForTimeout(5000);
+    await expect(newTab.locator('.sweet-alert')).toContainText("Thank you for your purchase!");
 
 });
 
