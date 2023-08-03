@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { executeRegistration } = require('../helpers/registration');
 
-test('Browser Context Test', async ({ browser }) => {
+test('Order Success Validation', async ({ browser }) => {
     const { newTab, randomString, page } = await executeRegistration(browser);
 
     // Product 1 selection

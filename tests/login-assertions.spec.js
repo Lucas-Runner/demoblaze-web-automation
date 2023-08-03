@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { executeRegistration } = require('../helpers/registration');
 
-test('Browser Context Test', async ({ browser }) => {
+test('Log-in Function Validation', async ({ browser }) => {
     const { newTab, randomString } = await executeRegistration(browser);
 
     // Assertions
