@@ -23,7 +23,7 @@
 
 - O cenário de Log-in é definido pela asserção da presença da página inicial após a função de registro ter sido devidamente implementada, e pela identificação da mensagem de boas vindas ao usuário registrado
 
-1. Invoca função de registro
+1. Invoca função de registro `executeRegustration`
 2. Asserte a presença do URL correto
 3. Asserte a presença dos dados préviamente utilizados para Sign-in e log-in na página inicial em um campo de boas vindas
 
@@ -33,7 +33,7 @@
 
 - O cenário de testes de adição de produtos em carrinho visa garantir que os itens selecionados, tanto na página inicial quanto dentro de subcategoria de produtos resulta na presença dos produtos selecionados no carrinho
 
-1. Invoca função de registro
+1. Invoca função de registro `executeRegustration`
 2. Adiciona um produto localizado na página inicial no carrinho
 3. Armazena o título do produto
 4. Retorna a página inicial
@@ -49,7 +49,7 @@
 
 - O cenário de testes de execução de compra efetua os mesmos passos do teste anterior, porém onde o teste anterior possui a função de assertir a presença dos produtos corretos no carrinho, o teste que simula o cenário de compra prossegue com a ordem de compra
 
-1. Invoca função de registro
+1. Invoca função de registro `executeRegustration`
 2. Adiciona um produto localizado na página inicial no carrinho
 4. Retorna a página inicial
 5. Seleciona sub-categoria de produtos no menu lateral
