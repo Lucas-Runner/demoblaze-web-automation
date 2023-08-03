@@ -26,11 +26,26 @@ test('Browser Context Test', async ({ browser }) => {
     await newTab.locator(secondItemLocator).click();
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='cartur']").click();
+    //const totalCost = await newTab.locator(".confirm.btn.btn-lg.btn-primary");
 
-    // Cart assertions
+    // Order placement
 
-    expect(await newTab.locator("[id='tbodyid']")).toContainText(firstItemName);
-    expect(await newTab.locator("[id='tbodyid']")).toContainText(secondItemName);
+    await newTab.locator(".btn.btn-success").click();
+
+    await newTab.locator("[id='name']").click();
+    await newTab.locator("[id='name']").type("Lucas");
+    await newTab.locator("[id='country']").type("Brasil");
+    await newTab.locator("[id='city']").type("São Paulo");
+    await newTab.locator("[id='card']").type("0000 1111 2222 3333");
+    await newTab.locator("[id='month']").type("02");
+    await newTab.locator("[id='year']").type("2025");
+
+    await newTab.locator("button[onclick='purchaseOrder()']").click();
+    await newTab.locator(".confirm.btn.btn-lg.btn-primary").click();
+
+    expect(await newTab.locator('div.sweet-alert.showSweetAlert.visible')).toContainText("Thank you for your purchase!");
+
+    await page.waitForTimeout(5000);
 
 });
 
