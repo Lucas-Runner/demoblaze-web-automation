@@ -11,22 +11,34 @@ async function executeRegistration(browser) {
     const page = await context.newPage();
 
     await page.goto(newUrl);
-    console.log(email);
 
     // New tab for website navigation / Website Registration
-    const newTab = await context.newPage();
-    await newTab.goto("https://demo.spreecommerce.org/");
-    await newTab.locator("#account-button").click();
-    await newTab.locator('#link-to-account a[href="/signup"]').click();
-    await newTab.locator("[id$='spree_user_email']").type(email);
 
     const numPassword = "123456789"
 
-    await newTab.locator("[id$='spree_user_password']").type(numPassword);
-    await newTab.locator("[id$='spree_user_password_confirmation']").type(numPassword);
-    await newTab.locator(".btn.btn-primary.btn-block.spree-btn.mb-5").click();
+    const newTab = await context.newPage();
+    const signUpButtonSelector = 'button[onclick="register()"]';
+    const logInButtonSelector = 'button[onclick="logIn()"]';
 
-    return { email, newTab, numPassword, page };
+    await newTab.goto("https://demoblaze.com/");
+    await newTab.locator("[id='signin2']").click();
+    await newTab.locator("[id='sign-username']").click();
+    await newTab.locator("[id='sign-username']").type(email);
+    await newTab.locator("[id='sign-password']").click();
+    await newTab.locator("[id='sign-password']").type(numPassword);
+    await newTab.locator(signUpButtonSelector).click();
+
+    await newTab.locator("[id='login2']").click();
+    await newTab.locator("[id='loginusername']").click();
+    await newTab.locator("[id='loginusername']").type(email);
+    await newTab.locator("[id='loginpassword']").click();
+    await newTab.locator("[id='loginpassword']").type(numPassword);
+    await newTab.locator(logInButtonSelector).click();
+
+    return { email, newTab, numPassword, page, randomString };
 }
 
-module.exports = { executeRegistration };
+module.exports = { executeRegistration }; 
+
+
+
