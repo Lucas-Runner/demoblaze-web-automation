@@ -33,7 +33,7 @@ test('Cart Function Validation', async ({ browser }) => {
 });
 
 test('Cart Function Validation 2', async ({ browser }) => {
-    const { newTab, randomString, page } = await executeRegistration(browser);
+    const { newTab } = await executeRegistration(browser);
 
     // Product 1 selection
 
