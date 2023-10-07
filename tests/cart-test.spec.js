@@ -32,15 +32,3 @@ test('Cart Function Validation', async ({ browser }) => {
 
 });
 
-test('Cart Function Validation 2', async ({ browser }) => {
-    const { newTab } = await executeRegistration(browser);
-
-    // Product 1 selection
-
-    const firstItemLocator = 'a[href="prod.html?idp_=1"].hrefch';
-    await newTab.locator(firstItemLocator).click();
-    await newTab.locator(".btn.btn-success.btn-lg").click();
-    await newTab.locator("[id='nava']").click();
-
-});
-
