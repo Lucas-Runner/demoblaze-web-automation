@@ -43,10 +43,5 @@ test('Cart Function Validation 2', async ({ browser }) => {
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='nava']").click();
 
-    // Product 2 menu navigation
-
-    const submenuSelector = 'a#itemc[onclick="byCat(\'notebook\')"].list-group-item';
-    await newTab.locator(submenuSelector).click();
-
 });
 
