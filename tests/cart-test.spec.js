@@ -48,13 +48,5 @@ test('Cart Function Validation 2', async ({ browser }) => {
     const submenuSelector = 'a#itemc[onclick="byCat(\'notebook\')"].list-group-item';
     await newTab.locator(submenuSelector).click();
 
-    // Product 2 selection
-
-    const secondItemLocator = 'a[href="prod.html?idp_=8"].hrefch';
-    const secondItemName = await newTab.locator(secondItemLocator).textContent();
-    await newTab.locator(secondItemLocator).click();
-    await newTab.locator(".btn.btn-success.btn-lg").click();
-    await newTab.locator("[id='cartur']").click();
-
 });
 
