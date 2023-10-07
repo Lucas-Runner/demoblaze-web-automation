@@ -56,13 +56,5 @@ test('Cart Function Validation 2', async ({ browser }) => {
     await newTab.locator(".btn.btn-success.btn-lg").click();
     await newTab.locator("[id='cartur']").click();
 
-    // Cart assertions
-
-    /*
-
-    await expect(newTab.locator("[id='tbodyid']")).toContainText(firstItemName);
-    await expect(newTab.locator("[id='tbodyid']")).toContainText(secondItemName);
-
-    */
 });
 
